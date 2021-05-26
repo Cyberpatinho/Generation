@@ -12,17 +12,13 @@ programa{
 		leia(C)
 		escreva("\nEntre com o quarto número: ")
 		leia(D)
-		
-		A = A*A
-		B = B*B
-		C = C*C
-		D = D*D
 
-		se(C - 10000 >= -EPS){
-			escreva("\nO valor de C é: ", C)
+
+		se(C*C - 10000 >= -EPS){
+			escreva("\nO quadrado de ", C, " é: ", C*C)
 		}
 		senao{
-			escreva("\nO valor de A é: ", A, "\nO valor de B é: ", B, "\nO valor de C é: ", C, "\nO valor de D é: ", D)
+			escreva("\nO quadrado de ", A, " é " , A*A, "\nO quadrado de ", B, " é: ", B*B, "\nO quadrado de ", C, " é: ", C*C, "\nO quadrado de ", D, " é: ", D*D)
 			
 		}
 
@@ -37,7 +33,7 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 286; 
+ * @POSICAO-CURSOR = 341; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

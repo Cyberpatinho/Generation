@@ -5,7 +5,7 @@ programa{
 		inteiro P, M = 0, E = 0
 		escreva("\nEntre com o peso dos tomates: ")
 		leia(P)
-		se(P > 50){
+		se (P > 50){
 			M = (P-50)*4
 			E = P-50
 		}
@@ -22,7 +22,7 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 248; 
+ * @POSICAO-CURSOR = 120; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
