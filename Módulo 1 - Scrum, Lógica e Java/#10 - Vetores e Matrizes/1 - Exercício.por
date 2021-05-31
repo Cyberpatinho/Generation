@@ -1,22 +1,20 @@
 programa{
 
 	funcao inicio(){
+		
+		real v[5], ma = -2000000000.0
+		para(inteiro i = 0; i<5; i++){
+			escreva("\nEntre com o ", i+1, "° valor: ")
+			leia(v[i])
+			limpa()
+			se(v[i] > ma) ma = v[i]
+		}
 
-		inteiro n
-		escreva("\nEntre com o número: ")
-		leia(n)
+		para(inteiro i = 0; i<5; i++){
+			escreva(v[i], " ")
+		}
+		escreva("\nO maior valor no vetor é: ", ma) 
 
-		inteiro x = 1, sum = 0
-		faca{
-			sum += x
-			x++
-		}enquanto(x <= n)
-
-		escreva("\n", sum)
-
-		//sem loop 1231243
-		escreva("\n", n*(n+1)/2)
-			
 	}
 	
 }
@@ -26,7 +24,7 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 243; 
+ * @POSICAO-CURSOR = 63; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
