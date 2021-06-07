@@ -1,8 +1,6 @@
 package gen;
 import java.util.*;
-
 public class Ex4 {
-
     static int[][] getM() {
         Scanner in = new Scanner(System.in);
         int[][] m = new int[2][2];
@@ -13,19 +11,14 @@ public class Ex4 {
         System.out.println();
         return m;
     }
-
     static void printM(int[][] m){
         for(int i = 0; i<2; i++){
-            for(int j = 0; j<2; j++) System.out.printf("%d ", m[i][j]);
-            System.out.println();
+            for(int j = 0; j<2; j++) System.out.printf("%d%c", m[i][j], (i == 1? '\n' : ' '));
         }
     }
-
     public static void main(String[] args){
-
         Scanner in = new Scanner(System.in);
         int[][] m1 = getM(), m2 = getM(), m3 = new int [2][2];
-
         System.out.printf("Entre com a operação desejada: (1 - Soma / 2 - Diferença / 3 - Soma de Const / 4 - Imprimir) ");
         int op = in.nextInt();
         switch(op){
@@ -39,7 +32,6 @@ public class Ex4 {
                 System.out.println("\nA diferença das matrizes é: ");
                 printM(m3);
                 break;
-
             case 3:
                 System.out.printf("\nEntre com a constante: ");
                 int k = in.nextInt();
@@ -49,15 +41,11 @@ public class Ex4 {
                 System.out.println("As matrizes atualizadas são: ");
                 printM(m1); System.out.println(); printM(m2);
                 break;
-
             case 4:
                 printM(m1); System.out.println(); printM(m2);
                 break;
-
             default:
                 System.out.println("\nOperação Inválida!");
         }
-
     }
-
 }
