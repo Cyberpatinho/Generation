@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.lang.InterruptedException;
 
-public class Ex1Patient {
+public class Ex1PatientMain {
 
     public static void main(String[] args){
 

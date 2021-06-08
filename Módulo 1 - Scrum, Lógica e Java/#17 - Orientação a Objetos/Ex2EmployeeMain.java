@@ -1,7 +1,7 @@
 package gen;
 import java.util.*;
 
-public class Ex2Employee {
+public class Ex2EmployeeMain {
 
     public static void main(String[] args){
 
