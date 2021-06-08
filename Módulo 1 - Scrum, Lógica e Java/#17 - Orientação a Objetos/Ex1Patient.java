@@ -8,9 +8,9 @@ public class Ex1Patient {
     public static void main(String[] args){
 
         /*
-         * Explicação: Após a entrada dos dados, o programa cria uma simulação do tratamento e avanço da doença
-         * para ver se o paciente sobreviverá ou não.
-         */
+          Explicação: Após a entrada dos dados, o programa cria uma simulação do tratamento e avanço da doença
+          para ver se o paciente sobreviverá ou não.
+        */
 
 
         int id;
