@@ -2,7 +2,7 @@ package gen;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Ex3Plane {
+public class Ex3PlaneMain {
 
     public static void main(String[] args){
 
