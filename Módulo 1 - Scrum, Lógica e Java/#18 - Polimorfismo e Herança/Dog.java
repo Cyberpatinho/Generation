@@ -18,7 +18,18 @@ public class Dog extends Animal{
     }
 
     public void printInfo(){
-        System.out.printf("Nome: %s\nIdade: %d\nRaça: %s\n", name, age, breed);
+        System.out.printf("Nome: %s\nIdade: %d\nRaça: %s\n", getName(), getAge(), breed);
     }
+
+    @Override
+    public void sound(){
+        System.out.println("Cachorro diz: Au Au!");
+    }
+
+    @Override
+    public void run(){
+        System.out.println("Cachorros conseguem correr.");
+    }
+
 
 }

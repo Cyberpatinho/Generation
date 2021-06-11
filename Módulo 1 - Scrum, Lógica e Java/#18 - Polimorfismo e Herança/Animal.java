@@ -1,12 +1,11 @@
 package gen;
 
-public class Animal {
+public abstract class Animal {
 
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public Animal(String name, int age) {
-        super();
         this.name = name;
         this.age = age;
     }
@@ -26,5 +25,9 @@ public class Animal {
     public void setAge(int age) {
         this.age = age;
     }
+
+    abstract public void sound();
+
+    abstract public void run();
 
 }
