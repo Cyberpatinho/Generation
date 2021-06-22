@@ -38,3 +38,4 @@ SELECT * FROM tb_personagem WHERE defesa_personagem >= 1000 && defesa_personagem
 SELECT * FROM tb_personagem WHERE nome_personagem LIKE "%C%";
 
 SELECT * FROM tb_personagem INNER JOIN tb_classe ON tb_personagem.id_classe = tb_classe.id_classe;
+SELECT * FROM tb_personagem INNER JOIN tb_classe ON tb_personagem.id_classe = tb_classe.id_classe WHERE nome_classe = "Bardo";
