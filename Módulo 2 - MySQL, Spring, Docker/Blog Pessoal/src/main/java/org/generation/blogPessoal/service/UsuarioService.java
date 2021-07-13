@@ -11,39 +11,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class UsuarioService {
 
+
 	@Autowired
-	UsuarioRepository usuarioRepository;
+	private UsuarioRepository usuarioRepository;
 
-	public Usuario cadastrarUsuario(Usuario usuario) {
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
-		String senhaEncoder = encoder.encode(usuario.getSenha());
-		usuario.setSenha(senhaEncoder);
-
-		return usuarioRepository.save(usuario);
+	public Optional<Object> cadastrar(Usuario novoUsuario) {
+		return usuarioRepository.findByLogin(novoUsuario.getLogin()).map(usuarioExistente -> {
+			return Optional.empty();
+		}).orElseGet(() -> {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+			String senhaCriptografada = encoder.encode(novoUsuario.getSenha());
+			novoUsuario.setSenha(senhaCriptografada);
+			return Optional.ofNullable(usuarioRepository.save(novoUsuario));
+		});
 	}
-	
-	public Optional<UserLogin> logar(Optional<UserLogin> user){
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<Usuario> usuario = usuarioRepository.findByUsuario(user.get().getUsuario());
-		
-		if(usuario.isPresent()) {
-			if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())){
-				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
-				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				String authHeader = "Basic " + new String(encodedAuth);
+
+	public Optional<?> logar(UserLogin usuarioDto) {
+			return usuarioRepository.findByLogin(usuarioDto.getLogin()).map(usuarioExistente -> {
+				BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+				if(encoder.matches(usuarioDto.getSenha(), usuarioExistente.getSenha())) {
+					String estruturaBasic = usuarioDto.getLogin() + ":" + usuarioDto.getSenha();
+					byte[] autorizacaoBase64 = Base64.encodeBase64(estruturaBasic.getBytes(Charset.forName("US-ASCII")));;
+					String autorizacaoHeader = "Basic " + new String(autorizacaoBase64);
+					
+					usuarioDto.setToken(autorizacaoHeader);
+					usuarioDto.setLogin(usuarioExistente.getLogin());
+					usuarioDto.setSenha(usuarioExistente.getSenha());
+					
+					return Optional.ofNullable(usuarioDto);
+				}
+				else {
+					return Optional.empty();
+				}
 				
-				user.get().setToken(authHeader);
-				user.get().setNome(usuario.get().getNome());
-				
-				return user;
-			} 
-		}
-		return null;
+			}).orElse(Optional.empty());		
+					
+					
 	}
 
 }

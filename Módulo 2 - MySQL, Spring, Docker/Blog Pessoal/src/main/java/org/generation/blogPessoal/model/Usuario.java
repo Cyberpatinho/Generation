@@ -20,11 +20,27 @@ public class Usuario {
 	
 	@NotNull
 	@Size(min = 5, max = 100)
-	private String usuario;
+	private String login;
 	
 	@NotNull
 	@Size(min = 5, max = 100)
 	private String senha;
+	
+	
+	public Usuario(@NotNull @Size(min = 2, max = 100) String nome, @NotNull @Size(min = 5, max = 100) String login,
+			@NotNull @Size(min = 5, max = 100) String senha) {
+		super();
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
+	}
+	
+	
+
+	public Usuario() {
+		super();
+	}
+
 
 	public long getId() {
 		return id;
@@ -42,12 +58,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getSenha() {

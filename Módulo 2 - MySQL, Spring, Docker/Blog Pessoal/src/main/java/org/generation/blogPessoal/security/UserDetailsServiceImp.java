@@ -17,10 +17,16 @@ public class UserDetailsServiceImp implements UserDetailsService {
 	private UsuarioRepository usuarioRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String userName) {
-		Optional<Usuario> user = usuarioRepository.findByUsuario(userName);
-		user.orElseThrow(() -> new UsernameNotFoundException(userName + " not found."));
-		return user.map(UserDetailsImp::new).get();
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
+		Optional<Usuario> clienteExistente = usuarioRepository.findByLogin(username);
+		
+		if(clienteExistente.isPresent()) {
+			return new UserDetailsImp(clienteExistente.get());
+		}
+		else {
+			throw new UsernameNotFoundException(username + " não existe!");
+		}
+		
 	}
-
 }

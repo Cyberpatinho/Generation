@@ -1,43 +1,41 @@
 package org.generation.blogPessoal.security;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.generation.blogPessoal.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserDetailsImp implements UserDetails {
-
 	private static final long serialVersionUID = 1L;
-	
-	private String userName;
-	private String password;
-	
-	public UserDetailsImp() {
-		
-	}
-	
-	public UserDetailsImp(Usuario user) {
-		this.userName = user.getUsuario();
-		this.password = user.getSenha();
-	}
 
+	private String login;
+	private String senha;
+	private List<GrantedAuthority> autorizacoes;
+	
+	public UserDetailsImp(Usuario usuario) {
+		super();
+		this.login = usuario.getLogin();
+		this.senha = usuario.getSenha();
+	}
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return autorizacoes;
 	}
 
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return password;
+		return senha;
 	}
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return userName;
+		return login;
 	}
 
 	@Override
@@ -55,7 +53,7 @@ public class UserDetailsImp implements UserDetails {
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -63,5 +61,4 @@ public class UserDetailsImp implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
 }
