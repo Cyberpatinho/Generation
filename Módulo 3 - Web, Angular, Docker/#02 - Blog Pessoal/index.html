@@ -10,30 +10,40 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
 </head>
 
 <body class="noselect">
     <div class="navbar">
-        <p class="presentation-text navbar-item"><a href="index.html">Home</a></p>
-        <p class="presentation-text navbar-item"><a href="#">Postagens</a></p>
-        <p class="presentation-text navbar-item"><a href="about.html">Sobre</a></p>
-        <p class="presentation-text navbar-item" style="margin-left: 55%;">Placeholder 4</p>
+        <p class="presentation-text navbar-item" onclick="selectContent('home')"><a href="#">Home</a></p>
+        <p class="presentation-text navbar-item" onclick="selectContent('posts')"><a href="#">Postagens</a></p>
+        <p class="presentation-text navbar-item" onclick="selectContent('about')"><a href="#">Sobre</a></p>
+        <p class="presentation-text navbar-item" style="margin-left: 55%;"><a href="#">Placeholder 4</a></p>
     </div>
     <div class="main">
         <div class="glyph"></div>
-        <p class="presentation-text">
+        <p id="home" class="presentation-text content">
         “καὶ ἐν ταῖς ἡμέραις ἐκείναις, ζητήσουσιν οἱ ἄνθρωποι τὸν θάνατον, καὶ οὐ μὴ εὑρήσουσιν αὐτόν; καὶ ἐπιθυμήσουσιν
         ἀποθανεῖν, καὶ φεύγει ὁ θάνατος ἀπ’ αὐτῶν.”
         <br><br>&nbsp(ἀποκάλυψις 9:6)
         </p>
+        <p id="posts" class="presentation-text content" style="display: none;">
+            Em construção...
+        </p>
+        <p id="about" class="presentation-text content" style="display: none;">
+            Textos e contos escatológicos sobre quantificação, materialismo, a morte de mundos e o nosso futuro.
+        </p>
     </div>
     
+
+
     <!--
     <audio controls loop autoplay class="music-player">
         <source src="assets/Silent Hill - Not Tomorrow (Cover) Creepypasta Medley Version.wav" type="audio/wav">
     </audio>
     -->
+
+    <script src="assets/script/script.js"></script>
 
 </body>
 
