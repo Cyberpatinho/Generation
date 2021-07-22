@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(255, 223, 80);
+}
+
+nav {
+    background-image: url("../img/nav.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 10%;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-top-color: black;
+    border-top-style: solid;
+    border-top-width: 2px;
+}
+
+.beak {
+    background-color: rgb(245, 126, 32);
+    height: 100px;
+    border-radius: 45%;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    min-height: 100%;;
+}
+
+/*
+.mouth {
+    min-width: 100%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 7.3%;
+}*/
+
+.main {
+    background-color: rgb(243, 238, 181);
+    margin-top: 7%;
+    padding: 4%;
+    border-radius: 3%;
+    border-color: rgb(255, 223, 80);
+    border-width: 3px;
+    border-style: solid;
+}
+
+.nav-link {
+    color: rgb(245, 126, 32);
+}
